@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <!-- Include Vue.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000;
+            font-size: 2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container mt-5">
+        <p>
+            X : Win : {{ xWins }}, Loss : {{ xLosses }}, Draw : {{ draws }}<br>
+            O : Win : {{ oWins }}, Loss : {{ oLosses }}, Draw : {{ draws }}
+        </p>
+        <div class="grid">
+            <div class="cell" v-for="(cell, index) in board" @click="makeMove(index)">
+                {{ cell }}
+            </div>
+        </div>
+        <button @click="resetGame" class="btn btn-primary mt-3">Reset Game</button>
+    </div>
+    <!-- Link to the external JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>
