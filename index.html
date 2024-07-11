@@ -8,23 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-        .cell {
-            width: 100px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #000;
-            font-size: 2em;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app" class="container mt-5">
@@ -37,7 +21,7 @@
                 {{ cell }}
             </div>
         </div>
-        <button @click="resetGame" class="btn btn-primary mt-3">Reset Game</button>
+        <button @click="resetGame" class="btn btn-success mt-3">Reset Game</button>
     </div>
     <!-- Link to the external JavaScript file -->
     <script src="app.js"></script>
